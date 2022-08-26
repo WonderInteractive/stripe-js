@@ -39,6 +39,7 @@ const injectScript = (params: null | LoadParams): HTMLScriptElement => {
   const queryString =
     params && !params.advancedFraudSignals ? '?advancedFraudSignals=false' : '';
   const script = document.createElement('script');
+  script.crossOrigin = 'anonymous';
   script.src = `${V3_URL}${queryString}`;
 
   const headOrBody = document.head || document.body;
